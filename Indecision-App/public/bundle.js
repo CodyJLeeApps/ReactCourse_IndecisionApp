@@ -1027,9 +1027,21 @@ var _reactDom = __webpack_require__(19);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _header = __webpack_require__(37);
+
+var _header2 = _interopRequireDefault(_header);
+
 var _addOptions = __webpack_require__(35);
 
 var _addOptions2 = _interopRequireDefault(_addOptions);
+
+var _option = __webpack_require__(36);
+
+var _option2 = _interopRequireDefault(_option);
+
+var _action = __webpack_require__(38);
+
+var _action2 = _interopRequireDefault(_action);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1094,8 +1106,8 @@ var IndecisionApp = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(Header, { subtitle: subtitle }),
-                _react2.default.createElement(Action, {
+                _react2.default.createElement(_header2.default, { subtitle: subtitle }),
+                _react2.default.createElement(_action2.default, {
                     hasOptions: this.state.options.length > 0,
                     handlePick: this.handlePick
                 }),
@@ -1153,42 +1165,6 @@ var IndecisionApp = function (_React$Component) {
     return IndecisionApp;
 }(_react2.default.Component);
 
-var Header = function Header(props) {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'h1',
-            null,
-            props.title
-        ),
-        props.subtitle && _react2.default.createElement(
-            'h2',
-            null,
-            props.subtitle
-        )
-    );
-};
-
-Header.defaultProps = {
-    title: 'Indecision'
-};
-
-var Action = function Action(props) {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'button',
-            {
-                onClick: props.handlePick,
-                disabled: !props.hasOptions
-            },
-            'What should I do?'
-        )
-    );
-};
-
 var Options = function Options(props) {
     return _react2.default.createElement(
         'div',
@@ -1204,29 +1180,12 @@ var Options = function Options(props) {
             'Please add an option to get started!'
         ),
         props.options.map(function (option) {
-            return _react2.default.createElement(Option, {
+            return _react2.default.createElement(_option2.default, {
                 key: option,
                 optionText: option,
                 handleDeleteOption: props.handleDeleteOption
             });
         })
-    );
-};
-
-var Option = function Option(props) {
-    return _react2.default.createElement(
-        'div',
-        null,
-        props.optionText,
-        _react2.default.createElement(
-            'button',
-            {
-                onClick: function onClick(e) {
-                    props.handleDeleteOption(props.optionText);
-                }
-            },
-            'remove'
-        )
     );
 };
 
@@ -21828,6 +21787,114 @@ var AddOptions = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AddOptions;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Option = function Option(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        props.optionText,
+        _react2.default.createElement(
+            'button',
+            {
+                onClick: function onClick(e) {
+                    props.handleDeleteOption(props.optionText);
+                }
+            },
+            'remove'
+        )
+    );
+};
+exports.default = Option;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'h1',
+            null,
+            props.title
+        ),
+        props.subtitle && _react2.default.createElement(
+            'h2',
+            null,
+            props.subtitle
+        )
+    );
+};
+
+Header.defaultProps = {
+    title: 'Indecision'
+};
+
+exports.default = Header;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Action = function Action(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'button',
+            {
+                onClick: props.handlePick,
+                disabled: !props.hasOptions
+            },
+            'What should I do?'
+        )
+    );
+};
+exports.default = Action;
 
 /***/ })
 /******/ ]);
