@@ -70,7 +70,7 @@ export default class IndecisionApp extends React.Component {
     }
     
     render() {
-        const subtitle = 'Computers making your decisions';
+        const subtitle = 'When you just can\'t decide what to play...';
 
         return(
             <div>
